@@ -37,12 +37,6 @@ class _AppPageState extends State<AppPage> {
                     Text(
                       _input,
                       style:
-                          GoogleFonts.nunito(color: Colors.white, fontSize: 15),
-                    ),
-                    Text(
-                      //calculateOutput(),
-                      _input,
-                      style:
                           GoogleFonts.nunito(color: Colors.white, fontSize: 30),
                     ),
                   ],
@@ -62,121 +56,140 @@ class _AppPageState extends State<AppPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CalculatorButton(
-                        buttonText: 'AC',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: 'AC',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
                       CalculatorButton(
-                        buttonText: '( )',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '( )',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
                       CalculatorButton(
-                        buttonText: '%',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '%',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
+                      Container(
+                          width: 1,
+                          height: 100,
+                          color: const Color(0xffE7D74A)),
                       CalculatorButton(
-                        buttonText: '+',
-                        buttonFrontColor: const Color(0xffE7D74A),
-                      )
+                          buttonText: '+',
+                          buttonFrontColor: const Color(0xffE7D74A),
+                          buttonBackColor: Colors.transparent)
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CalculatorButton(
-                        buttonText: '1',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '1',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
                       CalculatorButton(
-                        buttonText: '2',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '2',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
                       CalculatorButton(
-                        buttonText: '3',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '3',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
+                      Container(
+                          width: 1, height: 90, color: const Color(0xffE7D74A)),
                       CalculatorButton(
-                        buttonText: '-',
-                        buttonFrontColor: const Color(0xffE7D74A),
-                      ),
+                          buttonText: '-',
+                          buttonFrontColor: const Color(0xffE7D74A),
+                          buttonBackColor: Colors.transparent),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CalculatorButton(
-                        buttonText: '4',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '4',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
                       CalculatorButton(
-                        buttonText: '5',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '5',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
                       CalculatorButton(
-                        buttonText: '6',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '6',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
+                      Container(
+                          width: 1, height: 90, color: const Color(0xffE7D74A)),
                       CalculatorButton(
-                        buttonText: '*',
-                        buttonFrontColor: const Color(0xffE7D74A),
-                      ),
+                          buttonText: '*',
+                          buttonFrontColor: const Color(0xffE7D74A),
+                          buttonBackColor: Colors.transparent),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CalculatorButton(
-                        buttonText: '7',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '7',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
                       CalculatorButton(
-                        buttonText: '8',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '8',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
                       CalculatorButton(
-                        buttonText: '9',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '9',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
+                      Container(
+                          width: 1, height: 90, color: const Color(0xffE7D74A)),
                       CalculatorButton(
-                        buttonText: '/',
-                        buttonFrontColor: const Color(0xffE7D74A),
-                      ),
+                          buttonText: '/',
+                          buttonFrontColor: const Color(0xffE7D74A),
+                          buttonBackColor: Colors.transparent),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       CalculatorButton(
-                        buttonText: 'Del',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: 'Del',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
                       CalculatorButton(
-                        buttonText: '0',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '0',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
                       CalculatorButton(
-                        buttonText: '.',
-                        buttonFrontColor: Colors.white,
-                      ),
+                          buttonText: '.',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: Colors.transparent),
+                      Container(
+                          width: 1, height: 90, color: const Color(0xffE7D74A)),
                       CalculatorButton(
-                        buttonText: '=',
-                        buttonFrontColor: const Color(0xffE7D74A),
-                      ),
+                          buttonText: '=',
+                          buttonFrontColor: Colors.white,
+                          buttonBackColor: const Color(0xffE7D74A)),
                     ],
                   ),
                 ],
               ),
             ),
+            const SizedBox(height: 5)
           ],
         ),
       ),
     );
   }
 
-  Widget CalculatorButton({
-    required String buttonText, Color? buttonFrontColor}) {
+  Widget CalculatorButton(
+      {required String buttonText,
+      Color? buttonFrontColor,
+      Color? buttonBackColor}) {
     return InkWell(
       onTap: () => buttonPressed(buttonText),
       child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: buttonBackColor,
+        ),
         width: 90,
         height: 90,
         child: Center(
@@ -184,7 +197,7 @@ class _AppPageState extends State<AppPage> {
             buttonText,
             style: GoogleFonts.nunito(
               fontWeight: FontWeight.bold,
-              fontSize: 25,
+              fontSize: 28,
               color: buttonFrontColor,
             ),
           ),
@@ -197,20 +210,16 @@ class _AppPageState extends State<AppPage> {
     setState(() {
       if (buttonText == "AC") {
         _input = "0";
-      }
-      else if (buttonText == 'Del') {
+      } else if (buttonText == 'Del') {
         if (_input.isNotEmpty) {
           _input = _input.substring(0, _input.length - 1);
         }
-      }
-      else if (buttonText == "%") {
+      } else if (buttonText == "%") {
         _input += "/100";
-      }
-      else if (buttonText == "( )") {
-        if(_input == "0"){
+      } else if (buttonText == "( )") {
+        if (_input == "0") {
           _input = "*(";
-        }
-        else{
+        } else {
           if (_input.contains("(")) {
             if (_input.endsWith("+") ||
                 _input.endsWith("/") ||
@@ -220,23 +229,27 @@ class _AppPageState extends State<AppPage> {
             } else {
               _input += ")";
             }
-          }
-          else {
-            _input += "*(";
+          } else {
+            if (!_input.contains("(")) {
+              if (_input.endsWith("+") ||
+                  _input.endsWith("/") ||
+                  _input.endsWith("*") ||
+                  _input.endsWith("-")) {
+                _input += "(";
+              } else {
+                _input += "*(";
+              }
+            }
           }
         }
-      }
-      else if (buttonText == "=") {
-        _input = "${calculateOutput()}";
-      }
-      else {
-        if(_input == "0"){
+      } else if (buttonText == "=") {
+        _input = calculateOutput();
+      } else {
+        if (_input == "0") {
           _input = buttonText;
-        }
-        else{
+        } else {
           _input += buttonText;
         }
-
       }
     });
   }
@@ -248,8 +261,7 @@ class _AppPageState extends State<AppPage> {
           expression.evaluate(EvaluationType.REAL, ContextModel()).toString();
       return result;
     } catch (e) {
-      return e.toString();
-
+      return "ERROR";
     }
   }
 }
