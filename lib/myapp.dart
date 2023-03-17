@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:dart_eval/dart_eval.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 class AppPage extends StatefulWidget {
@@ -11,8 +10,7 @@ class AppPage extends StatefulWidget {
 }
 
 class _AppPageState extends State<AppPage> {
-  String _output = "0";
-  String _input = "";
+  String _input = "0";
   final parser = Parser();
 
   @override
@@ -42,7 +40,8 @@ class _AppPageState extends State<AppPage> {
                           GoogleFonts.nunito(color: Colors.white, fontSize: 15),
                     ),
                     Text(
-                      _output,
+                      //calculateOutput(),
+                      _input,
                       style:
                           GoogleFonts.nunito(color: Colors.white, fontSize: 30),
                     ),
@@ -173,8 +172,8 @@ class _AppPageState extends State<AppPage> {
     );
   }
 
-  Widget CalculatorButton(
-      {required String buttonText, Color? buttonFrontColor}) {
+  Widget CalculatorButton({
+    required String buttonText, Color? buttonFrontColor}) {
     return InkWell(
       onTap: () => buttonPressed(buttonText),
       child: Container(
@@ -197,33 +196,47 @@ class _AppPageState extends State<AppPage> {
   buttonPressed(String buttonText) {
     setState(() {
       if (buttonText == "AC") {
-        _output = "0";
-        _input = "";
-      } else if (buttonText == 'Del') {
+        _input = "0";
+      }
+      else if (buttonText == 'Del') {
         if (_input.isNotEmpty) {
           _input = _input.substring(0, _input.length - 1);
         }
-      } else if (buttonText == "%") {
+      }
+      else if (buttonText == "%") {
         _input += "/100";
-      } else if (buttonText == "( )") {
-        if (_input.contains("(")) {
-          if (_input.endsWith("+") ||
-              _input.endsWith("/") ||
-              _input.endsWith("*") ||
-              _input.endsWith("-")) {
-            _input += "(";
-          } else {
-            _input += ")";
-          }
-        } else {
-          _input += "(";
+      }
+      else if (buttonText == "( )") {
+        if(_input == "0"){
+          _input = "*(";
         }
-      } else if (buttonText == "=") {
-        _output = "= ${calculateOutput()}";
-      } else if (_output == "0") {
-        _input += buttonText;
-      } else {
-        _input += buttonText;
+        else{
+          if (_input.contains("(")) {
+            if (_input.endsWith("+") ||
+                _input.endsWith("/") ||
+                _input.endsWith("*") ||
+                _input.endsWith("-")) {
+              _input += "(";
+            } else {
+              _input += ")";
+            }
+          }
+          else {
+            _input += "*(";
+          }
+        }
+      }
+      else if (buttonText == "=") {
+        _input = "${calculateOutput()}";
+      }
+      else {
+        if(_input == "0"){
+          _input = buttonText;
+        }
+        else{
+          _input += buttonText;
+        }
+
       }
     });
   }
@@ -235,7 +248,8 @@ class _AppPageState extends State<AppPage> {
           expression.evaluate(EvaluationType.REAL, ContextModel()).toString();
       return result;
     } catch (e) {
-      return 'ERROR';
+      return e.toString();
+
     }
   }
 }
