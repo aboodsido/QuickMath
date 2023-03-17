@@ -172,7 +172,6 @@ class _AppPageState extends State<AppPage> {
                 ],
               ),
             ),
-            const SizedBox(height: 5)
           ],
         ),
       ),
@@ -186,11 +185,9 @@ class _AppPageState extends State<AppPage> {
     return InkWell(
       onTap: () => buttonPressed(buttonText),
       child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: buttonBackColor,
-        ),
-        width: 90,
+        margin: const EdgeInsets.only(right: 2.5),
+        color: buttonBackColor,
+        width: 95.3,
         height: 90,
         child: Center(
           child: Text(
@@ -218,7 +215,7 @@ class _AppPageState extends State<AppPage> {
         _input += "/100";
       } else if (buttonText == "( )") {
         if (_input == "0") {
-          _input = "*(";
+          _input = "(";
         } else {
           if (_input.contains("(")) {
             if (_input.endsWith("+") ||
